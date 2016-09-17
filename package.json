@@ -10,6 +10,7 @@
     "tsc:w": "tsc -w",
     "tsc:build": "tsc -p tsconfig-build.json",
     "test": "npm run karma:once",
+    "test:travis": "npm run karma:once -- --browsers Chrome_travis_ci",
     "karma": "npm run tsc && concurrently \"npm run tsc:w\" \"karma start karma.conf.js\"",
     "karma:once": "npm run tsc && karma start karma.conf.js --single-run",
     "rollup": "npm run tsc:build && rollup -c rollup.config.js",

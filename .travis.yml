@@ -7,4 +7,4 @@ install:
   - npm install
   - npm run typings:i
 script:
-  - npm test
+  - npm test:travis
