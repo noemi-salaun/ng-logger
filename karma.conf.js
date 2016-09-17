@@ -7,6 +7,11 @@ module.exports = function(config) {
   var testBase    = 'test/';       // transpiled test JS and map files
   var testSrcBase = 'test/';       // test source TS files
 
+  var browsers = ['Chrome'];
+  if (process.env.TRAVIS) {
+    browsers = ['Chrome_travis_ci'];
+  }
+
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
@@ -71,7 +76,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: browsers,
     singleRun: false
   })
 }
