@@ -55,7 +55,7 @@
     export class AppModule { } 
     ```
 
-## Usage
+## Usage
 
 Inject the `Logger` service anywhere you need it and use it like it's `console` :
  
