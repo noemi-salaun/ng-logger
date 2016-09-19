@@ -1,13 +1,18 @@
 .idea
 
 *.ts
+!*.d.ts
 *.js.map
 
 /typings.json
 /typings/
 /node_modules/
 /.gitignore
+/.npmignore
+/.travis.yml
+/license-banner.txt
 
+/test
 /karma.conf.js
 /karma-test-shim.js
 

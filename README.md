@@ -6,7 +6,7 @@
 **ng2-logger** is a simple Angular2 logger service that responds to two needs :
 
  - A log level system to be able to disable certain calls as needed. *We do not want to see our debug trace on production.*
- - A logger that keeps trace of the original log call. *We do not want all our log to be referenced in some `logger.service.js` at line 15 all the time.*
+ - A logger that keeps trace of the original log call. *We do not want all our logs to be referenced in some `logger.service.js` at line 15 all the time.*
 
 ## Installation
 
