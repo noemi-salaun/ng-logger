@@ -10,50 +10,45 @@
 
 ## Installation
 
- 1. Install the npm package.
- 
+1. Install the npm package.
 ```
 npm install --save @nsalaun/ng2-logger
 ```
-
- 2. Tells your application how to load `ng2-logger`. With SystemJS, it can look like :
+2. Tells your application how to load `ng2-logger`. With SystemJS, it can look like :
+```
+    var paths = {
+        'npm:': 'node_modules/'
+    };
  
- ```
-     var paths = {
-         'npm:': 'node_modules/'
-     };
+    // map tells the System loader where to look for things
+    var map = {
+        'app'                       : 'app',
+        '@angular'                  : 'npm:@angular',
+        'rxjs'                      : 'npm:rxjs',
+        '@nsalaun'                  : 'npm:@nsalaun'
+    };
  
-     // map tells the System loader where to look for things
-     var map = {
-         'app'                       : 'app',
-         '@angular'                  : 'npm:@angular',
-         'rxjs'                      : 'npm:rxjs',
-         '@nsalaun'                  : 'npm:@nsalaun'
-     };
+    // packages tells the System loader how to load when no filename and/or no extension
+    var packages = {
+        'app'                       : {main: 'main.js', defaultExtension: 'js'},
+        'rxjs'                      : {defaultExtension: 'js'},
+        '@nsalaun/ng2-logger'       : {defaultExtension: 'js', main: 'bundles/ng2-logger.umd.js'}
+    };
+```
+3. Import `Ng2Module` in your application and use `forRoot(level: Level)` to choose your log level :
+```
+import { NgModule }         from '@angular/core';
+import { BrowserModule }    from '@angular/platform-browser';
+import { AppComponent }     from './app.component';
+import { Ng2Module, Level } from '@nsalaun/ng2-logger';
  
-     // packages tells the System loader how to load when no filename and/or no extension
-     var packages = {
-         'app'                       : {main: 'main.js', defaultExtension: 'js'},
-         'rxjs'                      : {defaultExtension: 'js'},
-         '@nsalaun/ng2-logger'       : {defaultExtension: 'js', main: 'bundles/ng2-logger.umd.js'}
-     };
- ```
- 
- 3. Import `Ng2Module` in your application and use `forRoot(level: Level)` to choose your log level :
- 
- ```
- import { NgModule }         from '@angular/core';
- import { BrowserModule }    from '@angular/platform-browser';
- import { AppComponent }     from './app.component';
- import { Ng2Module, Level } from '@nsalaun/ng2-logger';
- 
- @NgModule({
-     imports:      [ BrowserModule, Ng2Module.forRoot(Level.LOG) ],
-     declarations: [ AppComponent ],
-     bootstrap:    [ AppComponent ]
- })
- export class AppModule { } 
- ```
+@NgModule({
+    imports:      [ BrowserModule, Ng2Module.forRoot(Level.LOG) ],
+    declarations: [ AppComponent ],
+    bootstrap:    [ AppComponent ]
+})
+export class AppModule { } 
+```
 
 ## Usage
 
