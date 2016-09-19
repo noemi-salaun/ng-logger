@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright Noémi Salaün All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE
+ */
+
 import {Injectable, OpaqueToken, Inject} from "@angular/core";
 import {Level} from "./level.enum";
 
@@ -70,13 +78,13 @@ export class Logger {
     groupEnd: () => void;
 
     /**
-     * Starts a timer you can use to track how long an operation takes. It works only with log {@link Level} equal or higher thant DEBUG.
+     * Starts a timer you can use to track how long an operation takes. It works only with log {@link Level} equal or higher than DEBUG.
      * @param timerName The name to give the new timer. This will identify the timer.
      */
     time: (timerName?: string) => void;
 
     /**
-     * Stops a timer that was previously started by calling {@link Logger.time}. It works only with log {@link Level} equal or higher thant DEBUG.
+     * Stops a timer that was previously started by calling {@link Logger.time}. It works only with log {@link Level} equal or higher than DEBUG.
      * @param timerName The name of the timer to stop. Once stopped, the elapsed time is automatically displayed in the Web Console.
      */
     timeEnd: (timerName?: string) => void;

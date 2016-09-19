@@ -12,8 +12,10 @@
     "test": "npm run karma:once",
     "karma": "npm run tsc && concurrently \"npm run tsc:w\" \"karma start karma.conf.js\"",
     "karma:once": "npm run tsc && karma start karma.conf.js --single-run",
-    "rollup": "npm run tsc:build && rollup -c rollup.config.js",
-    "rollup:min": "npm run tsc:build && rollup -c rollup-min.config.js",
+    "rollup": "npm run tsc:build && rollup -c rollup.config.js && npm run rollup:banner",
+    "rollup:min": "npm run tsc:build && rollup -c rollup-min.config.js && npm run rollup:min:banner",
+    "rollup:banner": "cat license-banner.txt > bundles/ng2-logger.umd.js && cat bundles/ng2-logger.umd.tmp >> bundles/ng2-logger.umd.js && rm bundles/ng2-logger.umd.tmp",
+    "rollup:min:banner": "cat license-banner.txt > bundles/ng2-logger.umd.min.js && cat bundles/ng2-logger.umd.min.tmp >> bundles/ng2-logger.umd.min.js && rm bundles/ng2-logger.umd.min.tmp",
     "bundle": "npm run rollup && npm run rollup:min"
   },
   "repository": {
