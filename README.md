@@ -11,10 +11,13 @@
 ## Installation
 
 1. Install the npm package.
+
     ```
     npm install --save @nsalaun/ng2-logger
     ```
+    
 2. Tells your application how to load `ng2-logger`. With SystemJS, it can look like :
+
     ```
     var paths = {
         'npm:': 'node_modules/'
@@ -35,7 +38,9 @@
         '@nsalaun/ng2-logger'       : {defaultExtension: 'js', main: 'bundles/ng2-logger.umd.js'}
     };
     ```
+    
 3. Import `Ng2Module` in your application and use `forRoot(level: Level)` to choose your log level :
+
     ```
     import { NgModule }         from '@angular/core';
     import { BrowserModule }    from '@angular/platform-browser';
