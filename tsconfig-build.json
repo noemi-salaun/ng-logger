@@ -14,5 +14,8 @@
   "files": [
     "index.ts",
     "typings/index.d.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "skipMetadataEmit": false
+  }
 }
