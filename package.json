@@ -69,5 +69,8 @@
     "@angular/platform-browser": "2.0.0",
     "@angular/platform-browser-dynamic": "2.0.0"
   },
-  "typings": "index.d.ts"
+  "typings": "index.d.ts",
+  "publishConfig": {
+    "registry":"https://registry.npmjs.org/"
+  }
 }
