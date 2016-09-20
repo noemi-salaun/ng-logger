@@ -3,8 +3,8 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
-    "sourceMap": true,
-    "declaration": true,
+    "sourceMap": false,
+    "declaration": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
