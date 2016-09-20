@@ -6,7 +6,9 @@
     "sourceMap": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "stripInternal": true,
+    "skipLibCheck": true
   },
   "files": [
     "index.ts",
