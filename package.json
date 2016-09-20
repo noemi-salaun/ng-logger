@@ -1,8 +1,10 @@
 {
   "name": "@nsalaun/ng2-logger",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Angular 2 logger service",
   "main": "bundles/ng2-logger.umd.js",
+  "typings": "index.d.ts",
+  "module": "index.js",
   "scripts": {
     "typings": "typings",
     "typings:i": "typings install",
@@ -71,7 +73,6 @@
     "@angular/platform-browser": "2.0.0",
     "@angular/platform-browser-dynamic": "2.0.0"
   },
-  "typings": "index.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   }
