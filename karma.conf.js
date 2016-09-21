@@ -51,8 +51,8 @@ module.exports = function(config) {
 
       // Paths loaded via module imports:
       // Angular itself
-      {pattern: 'node_modules/@angular/**/*.js', included: false, watched: false},
-      {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false},
+      {pattern: 'node_modules/@angular/!(tsc-wrapped|platform-server)/**/*.js', included: false, watched: false},
+      {pattern: 'node_modules/@angular/!(tsc-wrapped|platform-server)/**/*.js.map', included: false, watched: false},
 
       {pattern: 'systemjs.config.js', included: false, watched: false},
       'karma-test-shim.js',
