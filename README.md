@@ -1,8 +1,10 @@
 # ng2-logger
 
-[![Build Status](https://travis-ci.org/noemi-salaun/ng2-logger.svg?branch=master)](https://travis-ci.org/noemi-salaun/ng2-logger)
-[![npm version](https://badge.fury.io/js/%40nsalaun%2Fng2-logger.svg)](https://badge.fury.io/js/%40nsalaun%2Fng2-logger)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/noemi-salaun/ng2-logger/master.svg?style=flat-square)](https://travis-ci.org/noemi-salaun/ng2-logger)
+[![npm version](https://img.shields.io/npm/v/@nsalaun/ng2-logger.svg?style=flat-square)](https://www.npmjs.com/package/@nsalaun/ng2-logger)
+[![devDependencies Status](https://img.shields.io/david/dev/noemi-salaun/ng2-logger.svg?style=flat-square)](https://david-dm.org/noemi-salaun/ng2-logger?type=dev)
+[![peerDependencies Status](https://img.shields.io/david/peer/noemi-salaun/ng2-logger.svg?style=flat-square)](https://david-dm.org/noemi-salaun/ng2-logger?type=peer)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE)
 
 **ng2-logger** is a simple Angular2 logger service that responds to two needs :
 
