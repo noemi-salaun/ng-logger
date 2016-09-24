@@ -1,12 +1,15 @@
 # ng2-logger
 
 [![Build Status](https://travis-ci.org/noemi-salaun/ng2-logger.svg?branch=master)](https://travis-ci.org/noemi-salaun/ng2-logger)
+[![npm version](https://badge.fury.io/js/%40nsalaun%2Fng2-logger.svg)](https://badge.fury.io/js/%40nsalaun%2Fng2-logger)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE)
 
 **ng2-logger** is a simple Angular2 logger service that responds to two needs :
 
  - A log level system to be able to disable certain calls as needed. *We do not want to see our debug trace on production.*
- - A logger that keeps trace of the original log call. *We do not want all our logs to be referenced in some `logger.service.js` at line 15 all the time.*
+ - A logger that keeps trace of the original log call. *We do not want all our logs to be referenced in some `logger.service.js` all the time.*
+
+This package is compatible with [Angular2 AoT compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) and can be bundle with [RollupJS](http://rollupjs.org/).
 
 ## Installation
 
@@ -15,31 +18,8 @@
     ```
     npm install --save @nsalaun/ng2-logger
     ```
-    
-2. Tells your application how to load `ng2-logger`. With SystemJS, it can look like :
-
-    ```
-    var paths = {
-        'npm:': 'node_modules/'
-    };
-    
-    // map tells the System loader where to look for things
-    var map = {
-        'app'                       : 'app',
-        '@angular'                  : 'npm:@angular',
-        'rxjs'                      : 'npm:rxjs',
-        '@nsalaun'                  : 'npm:@nsalaun'
-    };
-    
-    // packages tells the System loader how to load when no filename and/or no extension
-    var packages = {
-        'app'                       : {main: 'main.js', defaultExtension: 'js'},
-        'rxjs'                      : {defaultExtension: 'js'},
-        '@nsalaun/ng2-logger'       : {defaultExtension: 'js', main: 'bundles/ng2-logger.umd.js'}
-    };
-    ```
-    
-3. Import `Ng2Module` in your application and use `forRoot(level: Level)` to choose your log level :
+        
+2. Import `Ng2Module` in your application and use `forRoot(level: Level)` to choose your log level :
 
     ```
     import { NgModule }         from '@angular/core';
@@ -54,6 +34,36 @@
     })
     export class AppModule { } 
     ```
+
+3. Tells your application how to load `ng2-logger`.
+    * Like Angular2 modules
+        * All the compiled JS use ES2015 module format. *You cannot use them with SystemJS.*
+        * UMD bundles are available for SystemJS loading.
+    * With SystemJS, it can look like :
+        ```
+        System.config({
+            paths: {
+                'npm:': 'node_modules/'
+            },
+            map: {
+                app: 'app',
+                
+                '@angular/core'   : 'npm:@angular/core/bundles/core.umd.js',
+                '@angular/common' : 'npm:@angular/common/bundles/common.umd.js',
+                // others angular bundles...
+                
+                '@nsalaun/ng2-logger': 'npm:@nsalaun/ng2-logger/bundles/ng2-logger.umd.js',
+                
+                rxjs: 'npm:rxjs',
+            },
+            packages: {
+                app : {defaultExtension: 'js', main: './main.js'},
+                rxjs: {defaultExtension: 'js'}
+            }
+        });
+        ```
+    * With AoT compilation, you don't have to do anything, `.metadata.json` files are here for you.
+    * With RollupJS, you don't have to do anything either, JS files use ES2015 module.
 
 ## Usage
 
