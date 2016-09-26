@@ -16,6 +16,7 @@
     "typings/index.d.ts"
   ],
   "angularCompilerOptions": {
-    "skipMetadataEmit": false
+    "skipMetadataEmit": false,
+    "skipTemplateCodegen": true
   }
 }
