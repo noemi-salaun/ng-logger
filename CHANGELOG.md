@@ -1,3 +1,6 @@
+# 1.0.1 (2016-10-11)
+ * Improve module export.
+
 # 1.0.0 (2016-09-26)
  * Update to Angular 2.0.1
 
