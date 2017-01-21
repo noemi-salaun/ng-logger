@@ -3,8 +3,6 @@
 *.ts
 !*.d.ts
 
-/typings.json
-/typings/
 /node_modules/
 /.gitignore
 /.npmignore
