@@ -21,16 +21,16 @@ This package is compatible with [Angular AoT compiler](https://angular.io/docs/t
     npm install --save @nsalaun/ng-logger
     ```
         
-2. Import `ngLoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
+2. Import `NgLoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
 
     ```
     import { NgModule }         from '@angular/core';
     import { BrowserModule }    from '@angular/platform-browser';
     import { AppComponent }     from './app.component';
-    import { ngLoggerModule, Level } from '@nsalaun/ng-logger';
+    import { NgLoggerModule, Level } from '@nsalaun/ng-logger';
      
     @NgModule({
-        imports:      [ BrowserModule, ngLoggerModule.forRoot(Level.LOG) ],
+        imports:      [ BrowserModule, NgLoggerModule.forRoot(Level.LOG) ],
         declarations: [ AppComponent ],
         bootstrap:    [ AppComponent ]
     })
@@ -103,5 +103,5 @@ The service offer a sub-list of `window.console` capacities :
      
 ## License
 
-(c) 2016 Noémi Salaün
+(c) 2017 Noémi Salaün
 [MIT](https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE)
