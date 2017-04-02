@@ -13,7 +13,12 @@
   },
   "files": [
     "index.ts",
-    "typings/index.d.ts",
     "test/logger.spec.ts"
+  ],
+  "typeRoots": [
+    "../node_modules/@types"
+  ],
+  "types": [
+    "jasmine"
   ]
 }

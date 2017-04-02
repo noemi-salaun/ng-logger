@@ -12,8 +12,13 @@
     "skipLibCheck": true
   },
   "files": [
-    "index.ts",
-    "typings/index.d.ts"
+    "index.ts"
+  ],
+  "typeRoots": [
+    "../node_modules/@types"
+  ],
+  "types": [
+    "jasmine"
   ],
   "angularCompilerOptions": {
     "skipMetadataEmit": false,

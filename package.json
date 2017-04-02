@@ -3,7 +3,6 @@
   "version": "1.0.2",
   "description": "Angular 2 logger service",
   "main": "bundles/ng2-logger.umd.js",
-  "typings": "index.d.ts",
   "module": "index.js",
   "scripts": {
     "********************** CLEAR **********************": "",
@@ -16,10 +15,7 @@
     "clear:tsc": "npm run clear:js && npm run clear:dts",
     "clear:ngc": "npm run clear:tsc && npm run clear:metadata",
     "clear": "npm run clear:ngc && npm run clear:css && npm run clear:bundle && npm run clear:test",
-    "clear:full": "npm run clear && rm -rf node_modules && rm -rf typings",
-    "********************** TYPINGS **********************": "",
-    "typings": "typings",
-    "typings:i": "typings install",
+    "clear:full": "npm run clear && rm -rf node_modules",
     "********************** TYPESCRIPT **********************": "",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
@@ -67,6 +63,7 @@
     "@angular/platform-browser-dynamic": "2.0.2",
     "@angular/platform-server": "2.0.2",
     "@angular/tsc-wrapped": "0.3.0",
+    "@types/jasmine": "^2.5.41",
     "concurrently": "3.1.0",
     "core-js": "2.4.1",
     "jasmine-core": "2.5.2",
@@ -80,7 +77,6 @@
     "rxjs": "5.0.0-beta.12",
     "systemjs": "0.19.39",
     "typescript": "2.0.3",
-    "typings": "1.4.0",
     "zone.js": "0.6.25"
   },
   "peerDependencies": {
