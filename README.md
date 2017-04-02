@@ -21,16 +21,16 @@ This package is compatible with [Angular2 AoT compiler](https://angular.io/docs/
     npm install --save @nsalaun/ng2-logger
     ```
         
-2. Import `Ng2Module` in your application and use `forRoot(level: Level)` to choose your log level :
+2. Import `Ng2LoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
 
     ```
     import { NgModule }         from '@angular/core';
     import { BrowserModule }    from '@angular/platform-browser';
     import { AppComponent }     from './app.component';
-    import { Ng2Module, Level } from '@nsalaun/ng2-logger';
+    import { Ng2LoggerModule, Level } from '@nsalaun/ng2-logger';
      
     @NgModule({
-        imports:      [ BrowserModule, Ng2Module.forRoot(Level.LOG) ],
+        imports:      [ BrowserModule, Ng2LoggerModule.forRoot(Level.LOG) ],
         declarations: [ AppComponent ],
         bootstrap:    [ AppComponent ]
     })
