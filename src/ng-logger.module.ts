@@ -3,7 +3,7 @@
  * Copyright Noémi Salaün All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE
+ * found in the LICENSE file at https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE
  */
 
 import {NgModule, ModuleWithProviders} from "@angular/core";
@@ -14,7 +14,7 @@ import {Logger, LOGGER_LEVEL} from "./logger.service";
  */
 
 @NgModule()
-export class Ng2LoggerModule {
+export class NgLoggerModule {
 
     /**
      * Provide the {@link Logger} with the given log {@link Level}.
@@ -22,7 +22,7 @@ export class Ng2LoggerModule {
      */
     static forRoot(level:Level = Level.LOG): ModuleWithProviders {
         return {
-            ngModule: Ng2LoggerModule,
+            ngModule: NgLoggerModule,
             providers: [
                 Logger,
                 {provide: LOGGER_LEVEL, useValue: level}

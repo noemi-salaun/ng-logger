@@ -2,9 +2,9 @@ import uglify from "rollup-plugin-uglify";
 
 export default {
     entry: 'index.js',
-    dest: 'bundles/ng2-logger.umd.min.tmp',
+    dest: 'bundles/ng-logger.umd.min.tmp',
     format: 'umd',
-    moduleName: 'ng2.logger',
+    moduleName: 'ng.logger',
     external: [
         '@angular/core'
     ],

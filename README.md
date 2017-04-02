@@ -1,44 +1,44 @@
-# ng2-logger
+# ng-logger
 
-[![Build Status](https://img.shields.io/travis/noemi-salaun/ng2-logger/master.svg?style=flat-square)](https://travis-ci.org/noemi-salaun/ng2-logger)
-[![npm version](https://img.shields.io/npm/v/@nsalaun/ng2-logger.svg?style=flat-square)](https://www.npmjs.com/package/@nsalaun/ng2-logger)
-[![devDependencies Status](https://img.shields.io/david/dev/noemi-salaun/ng2-logger.svg?style=flat-square)](https://david-dm.org/noemi-salaun/ng2-logger?type=dev)
-[![peerDependencies Status](https://img.shields.io/david/peer/noemi-salaun/ng2-logger.svg?style=flat-square)](https://david-dm.org/noemi-salaun/ng2-logger?type=peer)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/noemi-salaun/ng-logger/master.svg?style=flat-square)](https://travis-ci.org/noemi-salaun/ng-logger)
+[![npm version](https://img.shields.io/npm/v/@nsalaun/ng-logger.svg?style=flat-square)](https://www.npmjs.com/package/@nsalaun/ng-logger)
+[![devDependencies Status](https://img.shields.io/david/dev/noemi-salaun/ng-logger.svg?style=flat-square)](https://david-dm.org/noemi-salaun/ng-logger?type=dev)
+[![peerDependencies Status](https://img.shields.io/david/peer/noemi-salaun/ng-logger.svg?style=flat-square)](https://david-dm.org/noemi-salaun/ng-logger?type=peer)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE)
 
-**ng2-logger** is a simple Angular2 logger service that responds to two needs :
+**ng-logger** is a simple Angular logger service that responds to two needs :
 
  - A log level system to be able to disable certain calls as needed. *We do not want to see our debug trace on production.*
  - A logger that keeps trace of the original log call. *We do not want all our logs to be referenced in some `logger.service.js` all the time.*
 
-This package is compatible with [Angular2 AoT compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) and can be bundle with [RollupJS](http://rollupjs.org/).
+This package is compatible with [Angular AoT compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) and can be bundle with [RollupJS](http://rollupjs.org/).
 
 ## Installation
 
 1. Install the npm package.
 
     ```
-    npm install --save @nsalaun/ng2-logger
+    npm install --save @nsalaun/ng-logger
     ```
         
-2. Import `Ng2LoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
+2. Import `ngLoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
 
     ```
     import { NgModule }         from '@angular/core';
     import { BrowserModule }    from '@angular/platform-browser';
     import { AppComponent }     from './app.component';
-    import { Ng2LoggerModule, Level } from '@nsalaun/ng2-logger';
+    import { ngLoggerModule, Level } from '@nsalaun/ng-logger';
      
     @NgModule({
-        imports:      [ BrowserModule, Ng2LoggerModule.forRoot(Level.LOG) ],
+        imports:      [ BrowserModule, ngLoggerModule.forRoot(Level.LOG) ],
         declarations: [ AppComponent ],
         bootstrap:    [ AppComponent ]
     })
     export class AppModule { } 
     ```
 
-3. Tells your application how to load `ng2-logger`.
-    * Like Angular2 modules
+3. Tells your application how to load `ng-logger`.
+    * Like Angular modules
         * All the compiled JS use ES2015 module format. *You cannot use them with SystemJS.*
         * UMD bundles are available for SystemJS loading.
     * With SystemJS, it can look like :
@@ -54,7 +54,7 @@ This package is compatible with [Angular2 AoT compiler](https://angular.io/docs/
                 '@angular/common' : 'npm:@angular/common/bundles/common.umd.js',
                 // others angular bundles...
                 
-                '@nsalaun/ng2-logger': 'npm:@nsalaun/ng2-logger/bundles/ng2-logger.umd.js',
+                '@nsalaun/ng-logger': 'npm:@nsalaun/ng-logger/bundles/ng-logger.umd.js',
                 
                 rxjs: 'npm:rxjs',
             },
@@ -104,4 +104,4 @@ The service offer a sub-list of `window.console` capacities :
 ## License
 
 (c) 2016 Noémi Salaün
-[MIT](https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE)
+[MIT](https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE)

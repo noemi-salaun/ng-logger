@@ -3,12 +3,12 @@
  * Copyright Noémi Salaün All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/noemi-salaun/ng2-logger/blob/master/LICENSE
+ * found in the LICENSE file at https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE
  */
 
 import {Logger} from "../src/logger.service";
 import {TestBed, inject} from "@angular/core/testing";
-import {Ng2LoggerModule} from "../src/ng2-logger.module";
+import {NgLoggerModule} from "../src/ng-logger.module";
 import {Level} from "../src/level.enum";
 /**
  * Created by Noémi Salaün on 17/09/2016.
@@ -31,7 +31,7 @@ describe('Logger service', () => {
 
     describe('with level OFF', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [Ng2LoggerModule.forRoot(Level.OFF)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.OFF)]});
         });
 
         it('should not call anything', (inject([Logger], (logger: Logger) => {
@@ -61,7 +61,7 @@ describe('Logger service', () => {
 
     describe('with level ERROR', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [Ng2LoggerModule.forRoot(Level.ERROR)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.ERROR)]});
         });
 
         it('should call groups and error', (inject([Logger], (logger: Logger) => {
@@ -93,7 +93,7 @@ describe('Logger service', () => {
 
     describe('with level WARN', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [Ng2LoggerModule.forRoot(Level.WARN)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.WARN)]});
         });
 
         it('should call groups, warn and error', (inject([Logger], (logger: Logger) => {
@@ -125,7 +125,7 @@ describe('Logger service', () => {
 
     describe('with level INFO', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [Ng2LoggerModule.forRoot(Level.INFO)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.INFO)]});
         });
 
         it('should call groups and levels >= INFO', (inject([Logger], (logger: Logger) => {
@@ -157,7 +157,7 @@ describe('Logger service', () => {
 
     describe('with level DEBUG', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [Ng2LoggerModule.forRoot(Level.DEBUG)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.DEBUG)]});
         });
 
         it('should call groups, times and levels >= DEBUG', (inject([Logger], (logger: Logger) => {
@@ -189,7 +189,7 @@ describe('Logger service', () => {
 
     describe('with level LOG', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [Ng2LoggerModule.forRoot(Level.LOG)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.LOG)]});
         });
 
         it('should call groups, times and all levels', (inject([Logger], (logger: Logger) => {
@@ -221,7 +221,7 @@ describe('Logger service', () => {
 
     describe('with default level', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [Ng2LoggerModule.forRoot(Level.LOG)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.LOG)]});
         });
 
         it('should have level LOG', (inject([Logger], (logger: Logger) => {
