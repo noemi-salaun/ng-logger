@@ -23,7 +23,7 @@ This package is compatible with [Angular AoT compiler](https://angular.io/docs/t
         
 2. Import `NgLoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
 
-    ```
+    ```typescript
     import { NgModule }         from '@angular/core';
     import { BrowserModule }    from '@angular/platform-browser';
     import { AppComponent }     from './app.component';
@@ -42,7 +42,7 @@ This package is compatible with [Angular AoT compiler](https://angular.io/docs/t
         * All the compiled JS use ES2015 module format. *You cannot use them with SystemJS.*
         * UMD bundles are available for SystemJS loading.
     * With SystemJS, it can look like :
-        ```
+        ```javascript
         System.config({
             paths: {
                 'npm:': 'node_modules/'
@@ -73,7 +73,7 @@ This package is compatible with [Angular AoT compiler](https://angular.io/docs/t
 
 Inject the `Logger` service anywhere you need it and use it like it's `console` :
  
-```
+```typescript
 @Component({})
 export class MyComponent(){
 
@@ -107,7 +107,7 @@ The service offer a sub-list of `window.console` capacities :
 
 To set a different log level depending on environment, you can proceed as follows:
 
-```ts
+```typescript
 import { NgModule, isDevMode }   from '@angular/core';
 import { BrowserModule }         from '@angular/platform-browser';
 import { NgLoggerModule, Level } from '@nsalaun/ng-logger';
