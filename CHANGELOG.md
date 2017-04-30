@@ -1,9 +1,9 @@
 # 2.0.1 (2017-04-30)
- * [doc] Add example for environment log level. (a3b4598)
+ * [doc] Add example for environment log level. ([a3b4598](https://github.com/noemi-salaun/ng-logger/commit/a3b45986ba0b501d2614685f84b6cf2fcac3eeff))
 
 # 2.0.0 (2017-04-02)
  * Renaming to `ng-logger`.
- * Fixes typo in CHANGELOG (issue #2).
+ * Fixes typo in CHANGELOG (issue [#2](https://github.com/noemi-salaun/ng-logger/issues/2)).
  * Extends Angular compatibility to Angular v4.
  
 ### BREAKING CHANGES
