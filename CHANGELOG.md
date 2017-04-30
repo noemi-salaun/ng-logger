@@ -1,3 +1,6 @@
+# 2.0.1 (2017-04-30)
+ * [doc] Add example for environment log level. (a3b4598)
+
 # 2.0.0 (2017-04-02)
  * Renaming to `ng-logger`.
  * Fixes typo in CHANGELOG (issue #2).
