@@ -107,30 +107,30 @@ The service offer a sub-list of `window.console` capacities :
 
 To set a different log level depending on environment, you can proceed as follows:
 
-```diff
-+ import { NgModule, isDevMode }         from '@angular/core';
-import { BrowserModule }    from '@angular/platform-browser';
-import { AppComponent }     from './app.component';
+```ts
+import { NgModule, isDevMode }   from '@angular/core';
+import { BrowserModule }         from '@angular/platform-browser';
 import { NgLoggerModule, Level } from '@nsalaun/ng-logger';
+import { AppComponent }          from './app.component';
 
-// Set different log level depending on environment
-+ const LOG_LEVEL = Level.LOG;
-+ if (!isDevMode()){
-+   const LOG_LEVEL = Level.ERROR;
-+ }
+// Set different log level depending on environment.
+const LOG_LEVEL = Level.LOG;
+if (!isDevMode()){
+    const LOG_LEVEL = Level.ERROR;
+}
  
 @NgModule({
-+	imports:      [ BrowserModule, NgLoggerModule.forRoot(LOG_LEVEL) ],
-	declarations: [ AppComponent ],
-	bootstrap:    [ AppComponent ]
+    imports     : [ BrowserModule, NgLoggerModule.forRoot(LOG_LEVEL) ],
+    declarations: [ AppComponent ],
+    bootstrap   :  [ AppComponent ],
 })
 export class AppModule { } 
 ```
-
 
 *Please note this method is one among others. It may not suit your projects requirements/constraints*
      
 ## License
 
 © 2017 Noémi Salaün
+
 [MIT](https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE)
