@@ -69,6 +69,8 @@ This package is compatible with [Angular AoT compiler](https://angular.io/docs/t
 
 ## Usage
 
+### Basic Usage
+
 Inject the `Logger` service anywhere you need it and use it like it's `console` :
  
 ```
@@ -101,7 +103,34 @@ The service offer a sub-list of `window.console` capacities :
      - **[time](https://developer.mozilla.org/en-US/docs/Web/API/Console/time)(timerName: string) -** Starts a timer you can use to track how long an operation takes. It works only with log `Level` equal or higher than `DEBUG`.
      - **[timeEnd](https://developer.mozilla.org/en-US/docs/Web/API/Console/timeEnd)(timerName: string) -** Stops a timer that was previously started by calling `Logger.time()`. It works only with log `Level` equal or higher than `DEBUG`.
      
+### Using different log level on developpment or production
+
+To set a different log level depending on environment, you can proceed as follows:
+
+```diff
++ import { NgModule, isDevMode }         from '@angular/core';
+import { BrowserModule }    from '@angular/platform-browser';
+import { AppComponent }     from './app.component';
+import { NgLoggerModule, Level } from '@nsalaun/ng-logger';
+
+// Set different log level depending on environment
++ const LOG_LEVEL = Level.LOG;
++ if (!isDevMode()){
++   const LOG_LEVEL = Level.ERROR;
++ }
+ 
+@NgModule({
++	imports:      [ BrowserModule, NgLoggerModule.forRoot(LOG_LEVEL) ],
+	declarations: [ AppComponent ],
+	bootstrap:    [ AppComponent ]
+})
+export class AppModule { } 
+```
+
+
+*Please note this method is one among others. It may not suit your projects requirements/constraints*
+     
 ## License
 
-(c) 2017 Noémi Salaün
+© 2017 Noémi Salaün
 [MIT](https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE)
