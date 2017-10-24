@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE
  */
 
-import {Injectable, OpaqueToken, Inject} from "@angular/core";
+import {Injectable, InjectionToken, Inject} from "@angular/core";
 import {Level} from "./level.enum";
 
 /**
@@ -16,7 +16,7 @@ import {Level} from "./level.enum";
 /**
  * The token to provide the log {@link Level}.
  */
-export const LOGGER_LEVEL = new OpaqueToken('LoggerLevel');
+export const LOGGER_LEVEL = new InjectionToken<Level>('LoggerLevel');
 
 /**
  * A logger service that provide the same functions as {@link console}.
