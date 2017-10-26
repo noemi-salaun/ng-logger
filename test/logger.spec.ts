@@ -221,7 +221,7 @@ describe('Logger service', () => {
 
     describe('with default level', () => {
         beforeEach(() => {
-            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot(Level.LOG)]});
+            TestBed.configureTestingModule({imports: [NgLoggerModule.forRoot()]});
         });
 
         it('should have level LOG', (inject([Logger], (logger: Logger) => {

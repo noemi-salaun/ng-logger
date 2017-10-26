@@ -1,6 +1,6 @@
 {
   "name": "@nsalaun/ng-logger",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Angular logger service",
   "main": "bundles/ng-logger.umd.js",
   "module": "index.js",
