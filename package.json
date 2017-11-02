@@ -79,7 +79,7 @@
     "zone.js": "0.8.5"
   },
   "peerDependencies": {
-    "@angular/core": ">= 2.0.0 < 5"
+    "@angular/core": ">= 2.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
