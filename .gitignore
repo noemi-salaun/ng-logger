@@ -17,3 +17,5 @@
 
 /bundles/
 
+.ng_build
+dist

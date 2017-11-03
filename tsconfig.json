@@ -1,24 +1,19 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es5",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "inlineSources": false,
     "declaration": false,
-    "experimentalDecorators": true,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
-    "stripInternal": true,
-    "skipLibCheck": true
-  },
-  "files": [
-    "index.ts",
-    "test/logger.spec.ts"
-  ],
-  "typeRoots": [
-    "../node_modules/@types"
-  ],
-  "types": [
-    "jasmine"
-  ]
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
 }
