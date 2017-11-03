@@ -11,17 +11,17 @@
  - A log level system to be able to disable certain calls as needed. *We do not want to see our debug trace on production.*
  - A logger that keeps trace of the original log call. *We do not want all our logs to be referenced in some `logger.service.js` all the time.*
 
-This package is compatible with [Angular AoT compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) and can be bundle with [RollupJS](http://rollupjs.org/).
+This package is compatible with **Angular 5**, [Angular AoT compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) and [Angular CLI](https://cli.angular.io/).
 
 ## Installation
 
-1. Install the npm package.
+### 1 - Install the npm package.
 
-    ```
+    ```shell
     npm install --save @nsalaun/ng-logger
     ```
         
-2. Import `NgLoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
+### 2 - Import `NgLoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
 
     ```typescript
     import { NgModule }         from '@angular/core';
@@ -37,35 +37,37 @@ This package is compatible with [Angular AoT compiler](https://angular.io/docs/t
     export class AppModule { } 
     ```
 
-3. Tells your application how to load `ng-logger`.
-    * Like Angular modules
-        * All the compiled JS use ES2015 module format. *You cannot use them with SystemJS.*
-        * UMD bundles are available for SystemJS loading.
-    * With SystemJS, it can look like :
-        ```javascript
-        System.config({
-            paths: {
-                'npm:': 'node_modules/'
-            },
-            map: {
-                app: 'app',
-                
-                '@angular/core'   : 'npm:@angular/core/bundles/core.umd.js',
-                '@angular/common' : 'npm:@angular/common/bundles/common.umd.js',
-                // others angular bundles...
-                
-                '@nsalaun/ng-logger': 'npm:@nsalaun/ng-logger/bundles/ng-logger.umd.js',
-                
-                rxjs: 'npm:rxjs',
-            },
-            packages: {
-                app : {defaultExtension: 'js', main: './main.js'},
-                rxjs: {defaultExtension: 'js'}
-            }
-        });
-        ```
-    * With AoT compilation, you don't have to do anything, `.metadata.json` files are here for you.
-    * With RollupJS, you don't have to do anything either, JS files use ES2015 module.
+### 3 - Loading
+
+#### Using SystemJS configuration
+
+```JavaScript
+System.config({
+    map: {
+        'my-library': 'node_modules/my-library/bundles/my-library.umd.js'
+    }
+});
+```
+
+#### Angular-CLI
+
+No need to set up anything, just import it in your code.
+
+#### Rollup or webpack
+
+No need to set up anything, just import it in your code.
+
+#### Plain JavaScript
+
+Include the `umd` bundle in your `index.html`:
+```Html
+<script src="node_modules/my-library/bundles/my-library.umd.js"></script>
+```
+and use global `ng.myLibrary` namespace.
+
+### AoT compilation
+The library is compatible with _AoT compilation_.
+Because of the new metadata version with Angular 5, the library is not compatible with previous Angular version.
 
 ## Usage
 

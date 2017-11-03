@@ -1,19 +1,9 @@
 .idea/
 
 /node_modules/
-/npm-debug.log
+/dist/
+/documentation/
+/coverage/
 
-/src/*.js
-/src/*.js.map
-/src/*.d.ts
-/test/*.js
-/test/*.js.map
-/test/*.d.ts
-/index.js
-/index.js.map
-/index.d.ts
-*.metadata.json
-*.ngfactory.ts
-
-/bundles/
-
+*.log
+*.tgz

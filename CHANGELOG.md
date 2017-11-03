@@ -1,3 +1,8 @@
+# 5.0.0 (Angular v5.0.0) (2017-11-03)
+ * Because of the incompatibility with the previous version, the versioning now follow major Angular version.
+ * Change all the build process. It's now based on [robisim74/angular-library-starter](https://github.com/robisim74/angular-library-starter).
+ * Update compatibility for **Angular 5**.
+
 # 2.0.2 (2017-10-26)
  * Replace deprecated `OpaqueToken` by `InjectionToken` (issue [#11](https://github.com/noemi-salaun/ng-logger/issues/11)).
 

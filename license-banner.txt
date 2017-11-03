@@ -1,5 +1,5 @@
 /**
- * @license Noémi Salaün v2.0.0
+ * @license Noémi Salaün
  * (c) 2017 Noémi Salaün https://github.com/noemi-salaun/ng-logger
  * License: MIT
  */

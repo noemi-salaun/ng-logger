@@ -1,87 +1,81 @@
 {
   "name": "@nsalaun/ng-logger",
-  "version": "2.0.2",
+  "version": "5.0.0",
   "description": "Angular logger service",
-  "main": "bundles/ng-logger.umd.js",
-  "module": "index.js",
+  "main": "./bundles/ng-logger.umd.js",
+  "module": "./esm5/ng-logger.js",
+  "es2015": "./esm2015/ng-logger.js",
   "scripts": {
-    "********************** CLEAR **********************": "",
-    "clear:js": "find src -type f \\( -iname '*.js' -o -iname '*.js.map' \\) -delete && rm -f index.js index.js.map",
-    "clear:dts": "find src -type f -iname '*.d.ts' -delete && rm -f index.d.ts",
-    "clear:css": "find src -type f \\( -iname '*.css' -o -iname '*.css.map' \\) -delete",
-    "clear:test": "find test -type f \\( -iname '*.js' -o -iname '*.js.map' -o -iname '*.d.ts' \\) -delete",
-    "clear:metadata": "find src -type f -iname '*.metadata.json' -delete && rm -f index.metadata.json",
-    "clear:bundle": "rm -rf bundles",
-    "clear:tsc": "npm run clear:js && npm run clear:dts",
-    "clear:ngc": "npm run clear:tsc && npm run clear:metadata",
-    "clear": "npm run clear:ngc && npm run clear:css && npm run clear:bundle && npm run clear:test",
-    "clear:full": "npm run clear && rm -rf node_modules",
-    "********************** TYPESCRIPT **********************": "",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "ngc": "ngc -p tsconfig-build.json",
-    "********************** TEST **********************": "",
-    "test": "npm run karma:once",
-    "karma": "npm run tsc && concurrently \"npm run tsc:w\" \"karma start karma.conf.js\"",
-    "karma:once": "npm run tsc && karma start karma.conf.js --single-run",
-    "********************** ROLLUP **********************": "",
-    "rollup": "rollup -c rollup.config.js && npm run rollup:banner",
-    "rollup:min": "rollup -c rollup-min.config.js && npm run rollup:min:banner",
-    "rollup:banner": "cat license-banner.txt > bundles/ng-logger.umd.js && cat bundles/ng-logger.umd.tmp >> bundles/ng-logger.umd.js && rm bundles/ng-logger.umd.tmp",
-    "rollup:min:banner": "cat license-banner.txt > bundles/ng-logger.umd.min.js && cat bundles/ng-logger.umd.min.tmp >> bundles/ng-logger.umd.min.js && rm bundles/ng-logger.umd.min.tmp",
-    "********************** BUNDLE **********************": "",
-    "bundle": "npm run clear && npm test && npm run ngc && npm run rollup && npm run rollup:min"
+    "build": "node build.js",
+    "test": "karma start",
+    "lint": "tslint --project .",
+    "pack-lib": "npm pack ./dist",
+    "publish-lib": "npm publish ./dist"
+  },
+  "typings": "./ng-logger.d.ts",
+  "author": {
+    "name": "Noémi Salaün",
+    "email": "noemi.salaun@gmail.com"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/noemi-salaun/ng-logger.git"
   },
+  "bugs": {
+    "url": "https://github.com/noemi-salaun/ng-logger/issues"
+  },
+  "homepage": "https://github.com/noemi-salaun/ng-logger#readme",
   "keywords": [
-    "angular2",
     "logger",
     "typescript",
     "log",
     "ng",
     "angular"
   ],
-  "author": {
-    "name": "Noémi Salaün",
-    "email": "noemi.salaun@gmail.com"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/noemi-salaun/ng-logger/issues"
-  },
-  "homepage": "https://github.com/noemi-salaun/ng-logger#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@angular/common": "4.0.1",
-    "@angular/compiler": "4.0.1",
-    "@angular/compiler-cli": "4.0.1",
-    "@angular/core": "4.0.1",
-    "@angular/platform-browser": "4.0.1",
-    "@angular/platform-browser-dynamic": "4.0.1",
-    "@angular/tsc-wrapped": "4.0.1",
-    "@types/jasmine": "2.5.47",
-    "concurrently": "3.4.0",
-    "core-js": "2.4.1",
-    "jasmine-core": "2.5.2",
-    "karma": "1.5.0",
-    "karma-chrome-launcher": "2.0.0",
-    "karma-cli": "1.0.1",
-    "karma-jasmine": "1.1.0",
-    "reflect-metadata": "0.1.10",
-    "rollup": "0.41.6",
-    "rollup-plugin-uglify": "1.0.1",
-    "rxjs": "5.2.0",
-    "systemjs": "0.20.11",
-    "typescript": "2.2.2",
-    "zone.js": "0.8.5"
+  "dependencies": {
+    "tslib": "^1.7.1"
   },
   "peerDependencies": {
-    "@angular/core": ">= 2.0.0 < 5"
+    "@angular/core": ">= 5.0.0"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "devDependencies": {
+    "@angular/animations": "5.0.0",
+    "@angular/common": "5.0.0",
+    "@angular/compiler": "5.0.0",
+    "@angular/compiler-cli": "5.0.0",
+    "@angular/core": "5.0.0",
+    "@angular/platform-browser": "5.0.0",
+    "@angular/platform-browser-dynamic": "5.0.0",
+    "@angular/platform-server": "5.0.0",
+    "@types/jasmine": "2.6.2",
+    "@types/node": "8.0.47",
+    "chalk": "2.3.0",
+    "codelyzer": "4.0.0",
+    "core-js": "2.5.1",
+    "istanbul-instrumenter-loader": "3.0.0",
+    "jasmine-core": "2.8.0",
+    "karma": "1.7.1",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-coverage-istanbul-reporter": "1.3.0",
+    "karma-jasmine": "1.1.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-spec-reporter": "0.0.31",
+    "karma-webpack": "2.0.5",
+    "reflect-metadata": "0.1.10",
+    "rollup": "0.50.0",
+    "rollup-plugin-license": "0.5.0",
+    "rollup-plugin-node-resolve": "3.0.0",
+    "rollup-plugin-sourcemaps": "0.4.2",
+    "rxjs": "5.5.2",
+    "shelljs": "0.7.8",
+    "source-map-loader": "0.2.3",
+    "ts-loader": "3.1.1",
+    "tslint": "5.8.0",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "2.4.2",
+    "uglify-js": "3.1.6",
+    "webpack": "3.8.1",
+    "zone.js": "0.8.18"
   }
 }

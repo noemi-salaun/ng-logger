@@ -7,7 +7,6 @@
  */
 
 /**
- * Created by Noémi Salaün on 17/09/2016.
+ * Entry point for all public APIs of the package.
  */
-
-export * from './src/index';
+export * from './src/ng-logger'

@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strict": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es5",
+    "rootDir": ".",
     "sourceMap": true,
-    "inlineSources": false,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "stripInternal": true,
-    "skipLibCheck": true
+    "inlineSources": true,
+    "target": "es5",
+    "skipLibCheck": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "typeRoots": [
+      "./node_modules/@types/"
+    ]
   },
-  "files": [
-    "index.ts",
-    "test/logger.spec.ts"
-  ],
-  "typeRoots": [
-    "../node_modules/@types"
-  ],
-  "types": [
-    "jasmine"
+  "exclude": [
+    "node_modules"
   ]
 }
