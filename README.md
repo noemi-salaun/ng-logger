@@ -17,25 +17,25 @@ This package is compatible with **Angular 5**, [Angular AoT compiler](https://an
 
 ### 1 - Install the npm package.
 
-    ```shell
-    npm install --save @nsalaun/ng-logger
-    ```
+```shell
+npm install --save @nsalaun/ng-logger
+```
         
 ### 2 - Import `NgLoggerModule` in your application and use `forRoot(level: Level)` to choose your log level :
 
-    ```typescript
-    import { NgModule }         from '@angular/core';
-    import { BrowserModule }    from '@angular/platform-browser';
-    import { AppComponent }     from './app.component';
-    import { NgLoggerModule, Level } from '@nsalaun/ng-logger';
+```typescript
+import { NgModule }              from '@angular/core';
+import { BrowserModule }         from '@angular/platform-browser';
+import { AppComponent }          from './app.component';
+import { NgLoggerModule, Level } from '@nsalaun/ng-logger';
      
-    @NgModule({
-        imports:      [ BrowserModule, NgLoggerModule.forRoot(Level.LOG) ],
-        declarations: [ AppComponent ],
-        bootstrap:    [ AppComponent ]
-    })
-    export class AppModule { } 
-    ```
+@NgModule({
+    imports:      [ BrowserModule, NgLoggerModule.forRoot(Level.LOG) ],
+    declarations: [ AppComponent ],
+    bootstrap:    [ AppComponent ],
+})
+export class AppModule { } 
+```
 
 ### 3 - Loading
 
@@ -44,7 +44,7 @@ This package is compatible with **Angular 5**, [Angular AoT compiler](https://an
 ```JavaScript
 System.config({
     map: {
-        'my-library': 'node_modules/my-library/bundles/my-library.umd.js'
+        '@nsalaun/ng-logger': 'node_modules/@nsalaun/ng-logger/bundles/ng-logger.umd.js'
     }
 });
 ```
@@ -60,10 +60,10 @@ No need to set up anything, just import it in your code.
 #### Plain JavaScript
 
 Include the `umd` bundle in your `index.html`:
-```Html
-<script src="node_modules/my-library/bundles/my-library.umd.js"></script>
+```html
+<script src="node_modules/@nsalaun/ng-logger/bundles/ng-logger.umd.js"></script>
 ```
-and use global `ng.myLibrary` namespace.
+and use global `nsalaun.ngLogger` namespace.
 
 ### AoT compilation
 The library is compatible with _AoT compilation_.
@@ -117,14 +117,14 @@ import { AppComponent }          from './app.component';
 
 // Set different log level depending on environment.
 const LOG_LEVEL = Level.LOG;
-if (!isDevMode()){
+if (!isDevMode()) {
     const LOG_LEVEL = Level.ERROR;
 }
  
 @NgModule({
     imports     : [ BrowserModule, NgLoggerModule.forRoot(LOG_LEVEL) ],
     declarations: [ AppComponent ],
-    bootstrap   :  [ AppComponent ],
+    bootstrap   : [ AppComponent ],
 })
 export class AppModule { } 
 ```
