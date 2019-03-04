@@ -1,0 +1,29 @@
+{
+  "name": "@nsalaun/ng-logger",
+  "version": "7.0.0",
+  "description": "Angular logger service",
+  "author": {
+    "name": "Noémi Salaün",
+    "email": "noemi.salaun@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noemi-salaun/ng-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noemi-salaun/ng-logger/issues"
+  },
+  "homepage": "https://github.com/noemi-salaun/ng-logger#readme",
+  "keywords": [
+    "logger",
+    "typescript",
+    "log",
+    "ng",
+    "angular"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0"
+  }
+}
