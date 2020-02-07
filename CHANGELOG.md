@@ -1,3 +1,6 @@
+# 9.0.0 (Angular v9+) (2020-02-07)
+ * Update compatibility for **Angular 9**.
+
 # 7.0.0 (Angular v7+) (2019-03-04)
  * This library is now built with Angular CLI library generator.
  * Update compatibility for **Angular 7**.

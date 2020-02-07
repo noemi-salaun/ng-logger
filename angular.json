@@ -4,9 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "ng-logger": {
+      "projectType": "library",
       "root": "projects/ng-logger",
       "sourceRoot": "projects/ng-logger/src",
-      "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
@@ -14,6 +14,11 @@
           "options": {
             "tsConfig": "projects/ng-logger/tsconfig.lib.json",
             "project": "projects/ng-logger/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-logger/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -37,7 +42,9 @@
           }
         }
       }
-    }
+    }},
+  "cli": {
+    "analytics": "4b65baf2-dd07-4cef-9b29-7c1ddd6bce1b"
   },
   "defaultProject": "ng-logger"
 }
