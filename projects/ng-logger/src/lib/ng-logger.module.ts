@@ -21,7 +21,7 @@ export class NgLoggerModule {
    * Provide the {@link Logger} with the given log {@link Level}.
    * @param level The log level.
    */
-  static forRoot(level: Level = Level.LOG): ModuleWithProviders {
+  static forRoot(level: Level = Level.LOG): ModuleWithProviders<NgLoggerModule> {
     return {
       ngModule : NgLoggerModule,
       providers: [

@@ -1,3 +1,6 @@
+# 12.0.0 (Angular v12+) (2021-06-22)
+ * Update compatibilité for **Angular 12+**.
+
 # 9.0.0 (Angular v9+) (2020-02-07)
  * Update compatibility for **Angular 9**.
 

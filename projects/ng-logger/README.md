@@ -11,7 +11,7 @@
  - A log level system to be able to disable certain calls as needed. *We do not want to see our debug trace on production.*
  - A logger that keeps trace of the original log call. *We do not want all our logs to be referenced in some `logger.service.js` all the time.*
 
-This package is compatible with **Angular 9**, [Angular AoT compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) and [Angular CLI](https://cli.angular.io/).
+This package is compatible with **Angular 12** and above, [Angular AoT compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) and [Angular CLI](https://cli.angular.io/).
 
 ## Installation
 
@@ -133,6 +133,6 @@ export class AppModule { }
      
 ## License
 
-© 2017-2020 Noémi Salaün
+© 2017-2021 Noémi Salaün
 
 [MIT](https://github.com/noemi-salaun/ng-logger/blob/master/LICENSE)
